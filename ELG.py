@@ -43,6 +43,8 @@ def isFile(llist, llink):
 isFile(file_list, link)
 
 #print(linkForChange) #경로들의 list
+linkForChange_set = set(linkForChange)
+linkForChange = list(linkForChange_set)
 '''
 for i in range(0, len(linkForChange)):
     Encryption(linkForChange[i])
